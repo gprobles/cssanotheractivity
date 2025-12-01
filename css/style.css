@@ -1,19 +1,25 @@
-/* Reset & Basic */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base Layout */
 html, body {
   height: 100%; /* Full height */
 }
 
 body {
-  font-family: 'Georgia', sans-serif;
+  font-family: 'Georgia', serif; 
   line-height: 1.6;
-  background-color: #f5f0ff; /* light purple */
-  color: #333;
+
+  /* Background Image Setup */
+  background-image: url('images/background_as_image.jpg'); /* Image path */
+  background-repeat: repeat; /* Repeat setting */
+  background-size: cover; /* Size setting */
+  background-attachment: fixed; /* Fixed background on scroll */
+  background-color: #f7f3e8; /* Fallback color */
 
   display: flex;
   flex-direction: column;
@@ -23,22 +29,29 @@ main {
   padding: 20px;
   max-width: 800px;
   margin: auto;
-  flex: 1; /* Takes remaining space to push footer down */
+  flex: 1; 
 }
 
+/* Header */
 header {
-  background-color: #6a1b9a; /* deep purple */
-  color: #fff;
+  background-color: #5c392c; 
+  color: #8a6240; 
   padding: 20px;
   text-align: center;
+}
+
+header h1 {
+  color: #caba9c;
+  font-size: 3rem; 
 }
 
 header p {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #fff9c4; /* soft yellow text */
+  color: #caba9c; 
 }
 
+/* Navigation */
 nav ul {
   list-style: none;
   display: flex;
@@ -48,14 +61,14 @@ nav ul {
 }
 
 nav ul li a {
-  color: #fff9c4;
+  color: #f7f3e8; 
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  color: #ffeb3b;
+  color: #00704a; 
 }
 
 #menu-btn {
@@ -63,31 +76,33 @@ nav ul li a:hover {
   background: none;
   border: none;
   font-size: 24px;
-  color: #fff9c4;
+  color: #f7f3e8; 
   cursor: pointer;
 }
 
+/* Section Content */
 section {
   margin-bottom: 30px;
   padding: 15px;
-  background-color: #ede7f6; /* light purple section */
+  background-color: #ffffff; /* White background for readability */
   border-radius: 8px;
-  border-left: 5px solid #ffeb3b; /* yellow accent */
+  border-left: 5px solid #4d2d18; 
 }
 
 section h2 {
   margin-bottom: 10px;
-  color: #6a1b9a;
+  color: #102820; 
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 15px;
-  background: #6a1b9a;
-  color: #fff9c4;
+  background: #5c392c; 
+  color: #f7f3e8; 
 }
 
-/* Responsive */
+/* Responsive Navigation */
 @media(max-width: 768px) {
   nav ul {
     display: none;
@@ -101,6 +116,7 @@ footer {
     display: inline-block;
   }
 }
+
 /* Table Styling */
 table {
   width: 100%;
@@ -109,25 +125,37 @@ table {
 }
 
 table th, table td {
-  border: 1px solid #6a1b9a;
+  border: 1px solid #102820; 
   padding: 10px;
   text-align: left;
+  color: #102820; 
 }
 
 table th {
-  background-color: #6a1b9a;
-  color: #fff9c4; /* yellow text */
+  background-color: #102820; 
+  color: #f7f3e8; 
 }
 
 table tr:nth-child(even) {
-  background-color: #ede7f6; /* light purple */
+  background-color: #e6e0d4; 
 }
 
+/* Project Thumbnails */
+.project-thumbnail {
+  width: 100px; 
+  height: auto;
+  display: block; 
+  border: 2px solid #5c392c; 
+  border-radius: 4px; 
+}
+
+
+/* About Section */
 .about-me .about-content {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  flex-wrap: wrap; /* Responsive stacking on small screens */
+  flex-wrap: wrap; 
 }
 
 .profile-photo {
@@ -135,13 +163,14 @@ table tr:nth-child(even) {
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #ffeb3b; /* yellow border accent */
+  border: 4px solid #4c6444; 
 }
 
 .about-text {
-  flex: 1; /* Take remaining space */
+  flex: 1; 
 }
 
+/* Responsive About Section */
 @media (max-width: 768px) {
   .about-me .about-content {
     flex-direction: column;
@@ -152,4 +181,28 @@ table tr:nth-child(even) {
   .about-text ul {
     text-align: left;
   }
+}
+
+/* Contact Form General Fields */
+#contactForm label,
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+    display: block; 
+    width: 100%;    
+    margin-bottom: 10px; 
+    box-sizing: border-box; 
+}
+
+/* Contact Form Textarea */
+#contactForm textarea {
+    height: 150px; 
+    resize: vertical; 
+}
+
+/* Contact Section Width Control */
+main section {
+    max-width: 800px; 
+    margin: 20px auto; 
+    padding: 20px;
 }
